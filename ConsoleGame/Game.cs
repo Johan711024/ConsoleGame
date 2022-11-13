@@ -33,7 +33,7 @@
 
     private void GetCommand()
     {
-        var KeyPressed = ConsoleUI
+        //var KeyPressed = ConsoleUI
     }
 
     private void Initialize()
