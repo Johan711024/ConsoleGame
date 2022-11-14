@@ -33,7 +33,26 @@
 
     private void GetCommand()
     {
-        //var KeyPressed = ConsoleUI
+        var KeyPressed = ConsoleUI.GetKey();
+
+        switch (KeyPressed)
+        {
+            case ConsoleKey.LeftArrow:
+                Console.WriteLine("vä");
+                break;
+            case ConsoleKey.RightArrow:
+                Console.WriteLine("hö");
+                break;
+            case ConsoleKey.UpArrow:
+                Console.WriteLine("upp");
+                break;
+            case ConsoleKey.DownArrow:
+                Console.WriteLine("ner");
+                break;
+            case ConsoleKey.Q:
+                Environment.Exit(0);
+                break;
+        }
     }
 
     private void Initialize()
