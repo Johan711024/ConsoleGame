@@ -65,26 +65,30 @@ internal class Game
 
     private void GetCommand()
     {
-        var KeyPressed = ConsoleUI.GetKey();
+        var keyPressed = ConsoleUI.GetKey();
 
-        switch (KeyPressed)
+        switch (keyPressed)
         {
             case ConsoleKey.LeftArrow:
-                Console.WriteLine("vä");
+                Move(Direction.West);
                 break;
             case ConsoleKey.RightArrow:
-                Console.WriteLine("hö");
+                Move(Direction.East);
                 break;
             case ConsoleKey.UpArrow:
-                Console.WriteLine("upp");
+                Move(Direction.North);
                 break;
             case ConsoleKey.DownArrow:
-                Console.WriteLine("ner");
-                break;
-            case ConsoleKey.Q:
-                Environment.Exit(0);
+                Move(Direction.South);
                 break;
         }
+    }
+
+    private void Move(Position movement)
+    {
+        Position newPosition = hero.Cell.Position + movement;
+        Cell? newCell = map.GetCell(newPosition);
+        if (newCell is not null) hero.Cell = newCell;
     }
 
     private void Initialize()
